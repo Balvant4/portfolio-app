@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -20,7 +19,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-function page() {
+function VerifyUsername() {
   const router = useRouter();
   const params = useParams<{ username: string }>();
   const { toast } = useToast();
@@ -83,4 +82,4 @@ function page() {
   );
 }
 
-export default page;
+export default VerifyUsername;
