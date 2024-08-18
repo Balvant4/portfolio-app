@@ -19,7 +19,7 @@ export async function POST(request: Request) {
           message: "User not found",
         },
         {
-          status: 500,
+          status: 404,
         }
       );
     }
@@ -28,13 +28,13 @@ export async function POST(request: Request) {
     const isCodeNotExpired = new Date(user.verifyCodeExpiry) > new Date();
 
     if (isCodeValid && isCodeNotExpired) {
-      user.isVerifed = true;
+      user.isVerified = true;
       await user.save();
 
       return Response.json(
         {
           success: true,
-          message: "Account verify successfully",
+          message: "Account verified successfully",
         },
         {
           status: 201,
@@ -45,7 +45,7 @@ export async function POST(request: Request) {
         {
           success: false,
           message:
-            "Verification code expired Please signup again to get a new code",
+            "Verification code expired. Please signup again to get a new code",
         },
         {
           status: 400,
@@ -62,12 +62,12 @@ export async function POST(request: Request) {
         }
       );
     }
-  } catch (error) {
-    console.error("Error verify user", error);
+  } catch (error: any) {
+    console.error("Error verifying user:", error.message); // Log error message
     return Response.json(
       {
         success: false,
-        message: "Error verify user",
+        message: `Error verifying user: ${error.message}`, // Include error message in response
       },
       {
         status: 500,

@@ -11,8 +11,8 @@ export const passwordValidation = z
   .min(6, "Password must be at least 6 characters long.")
   .max(20, "Password must be no longer than 20 characters.")
   .regex(
-    /^(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/gm,
-    "Password must be at least 8 characters long, include at least one uppercase letter, one lowercase letter, and one digit. No spaces are allowed."
+    /^[A-Za-z\d]{6}$/,
+    "Password must be exactly 6 characters long and include only letters and digits."
   );
 
 export const signUpSchema = z.object({
