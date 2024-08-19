@@ -32,7 +32,6 @@ function SignUp() {
   const { toast } = useToast();
   const router = useRouter();
 
-  //zod implementation
   const form = useForm<z.infer<typeof signUpSchema>>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {
@@ -83,21 +82,30 @@ function SignUp() {
       const axiosError = error as AxiosError<ApiResponse>;
       let errorMessage = axiosError.response?.data.message;
       toast({
-        title: "Signup Faield",
+        title: "Signup Failed",
         description: errorMessage,
         variant: "destructive",
       });
       setIsSubmitting(false);
     }
   };
+
   return (
-    <div className="">
-      <div className="">
-        <div className="">
-          <h1>Join Portfolio </h1>
+    <div className="flex justify-center items-center h-[41.6rem] bg-gray-900 text-white">
+      <div className="w-full max-w-md p-8 space-y-6 bg-gray-800 rounded-lg shadow-lg">
+        <div className="text-center">
+          <h1 className="text-3xl font-extrabold tracking-tight mb-4">
+            Create Your Account
+          </h1>
+          <p className="text-gray-400">
+            Already have an account{" "}
+            <Link href="/sign-in" className="text-blue-600 hover:text-blue-800">
+              Sign in
+            </Link>
+          </p>
         </div>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className=" space-y-6">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <FormField
               control={form.control}
               name="username"
@@ -106,20 +114,23 @@ function SignUp() {
                   <FormLabel>Username</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="username"
+                      placeholder="Enter your username"
                       {...field}
                       onChange={(e) => {
                         field.onChange(e);
                         debounced(e.target.value);
                       }}
+                      className="bg-gray-700 border-gray-600"
                     />
                   </FormControl>
-                  {isCheckingUsername && <Loader2 className=" animate-spin" />}
+                  {isCheckingUsername && (
+                    <Loader2 className="animate-spin text-white" />
+                  )}
                   <p
-                    className={` text-sm ${
+                    className={`mt-2 text-sm ${
                       usernameMessage === "Username is unique"
-                        ? " text-green-500"
-                        : " text-red-500"
+                        ? "text-green-500"
+                        : "text-red-500"
                     }`}
                   >
                     {usernameMessage}
@@ -135,7 +146,11 @@ function SignUp() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="email" {...field} />
+                    <Input
+                      placeholder="Enter your email"
+                      {...field}
+                      className="bg-gray-700 border-gray-600"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -148,35 +163,33 @@ function SignUp() {
                 <FormItem>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input type="password" placeholder="Password" {...field} />
+                    <Input
+                      type="password"
+                      placeholder="Enter your password"
+                      {...field}
+                      className="bg-gray-700 border-gray-600"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit" disabled={isSubmitting}>
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="bg-textcolor hover:bg-btnhover text-black font-bold w-full text-[1rem] uppercase"
+            >
               {isSubmitting ? (
                 <>
-                  <LoaderCircle className=" mr-2 h-4 w-2 animate-spin" />
+                  <LoaderCircle className="mr-2 h-5 w-5 animate-spin" />
                   Please wait
                 </>
               ) : (
-                "Signup"
+                "Sign up"
               )}
             </Button>
           </form>
         </Form>
-        <div>
-          <p>
-            Already a member?
-            <Link
-              href="/sign-in"
-              className=" text-blue-600 hover:text-blue-800"
-            >
-              Sign in
-            </Link>
-          </p>
-        </div>
       </div>
     </div>
   );

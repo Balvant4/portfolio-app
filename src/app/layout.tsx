@@ -22,7 +22,7 @@ export default function RootLayout({
       <AuthProvider>
         <body className={inter.className}>
           <Navbar />
-          {children}
+          <div className="mt-[4.5rem]">{children}</div>
           <Toaster />
         </body>
       </AuthProvider>

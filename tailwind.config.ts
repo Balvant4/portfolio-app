@@ -3,6 +3,7 @@ import type { Config } from "tailwindcss";
 const config = {
   darkMode: ["class"],
   content: [
+    "./node_modules/flowbite-react/lib/**/*.js",
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
@@ -19,6 +20,11 @@ const config = {
     },
     extend: {
       colors: {
+        textwhite: "#ffffff",
+        textdes: "#cbcfd5",
+        secondbackcolor: "#4b5563",
+        btnhover: "#d36300",
+        textcolor: "#f97316",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -74,7 +80,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("flowbite/plugin")],
 } satisfies Config;
 
 export default config;
