@@ -46,7 +46,7 @@ function DropdownMenu({
         <ul className="py-2 text-sm text-gray-700">
           <li>
             <Link
-              href="/allprojects"
+              href="/projects/allprojects"
               className="block px-4 py-2 text-gray-100 hover:bg-slate-400"
               onClick={closeMenu}
             >
@@ -55,7 +55,7 @@ function DropdownMenu({
           </li>
           <li>
             <Link
-              href="/frontendprojects"
+              href="/projects/frontendprojects"
               className="block px-4 py-2 text-gray-100 hover:bg-slate-400"
               onClick={closeMenu}
             >
@@ -64,7 +64,7 @@ function DropdownMenu({
           </li>
           <li>
             <Link
-              href="/backendprojects"
+              href="/projects/backendprojects"
               className="block px-4 py-2 text-gray-100 hover:bg-slate-400"
               onClick={closeMenu}
             >
@@ -73,7 +73,7 @@ function DropdownMenu({
           </li>
           <li>
             <Link
-              href="/mernprojects"
+              href="/projects/mernprojects"
               className="block px-4 py-2 text-gray-100 hover:bg-slate-400"
               onClick={closeMenu}
             >
@@ -82,7 +82,7 @@ function DropdownMenu({
           </li>
           <li>
             <Link
-              href="/nextjsprojects"
+              href="/projects/nextjsprojects"
               className="block px-4 py-2 text-gray-100 hover:bg-slate-400"
               onClick={closeMenu}
             >
