@@ -22,6 +22,8 @@ const config = {
       colors: {
         headerback: "#1f2937",
         headertext: "#fff",
+        bodyback: "#111827",
+        secbodyback: "#1e293b",
         btnback: "#3b82f6",
         btnhover: "#2563eb",
         btntext: "#ffffff",
