@@ -14,7 +14,7 @@ function DropdownMenu({
         className={`flex items-center justify-between w-full py-2 px-3 rounded ${
           isActive
             ? "text-white bg-textcolor md:bg-transparent md:text-textcolor md:border-b-2 md:border-textcolor"
-            : "text-gray-900 md:text-textcolor md:hover:text-textcolor"
+            : "text-headertext md:text-textcolor md:hover:text-textcolor"
         }`}
         onClick={toggleDropdown}
       >
@@ -41,13 +41,13 @@ function DropdownMenu({
         id="dropdownMenu"
         className={`z-10 ${
           dropdownOpen ? "block" : "hidden"
-        } font-normal bg-[#000] text-[#fff] divide-y divide-gray-100 rounded-lg shadow w-44 absolute`}
+        } font-normal bg-headerback text-headertext divide-y divide-gray-100 rounded-lg shadow w-44 absolute`}
       >
-        <ul className="py-2 text-sm text-gray-700">
+        <ul className="py-2 text-sm text-headertext">
           <li>
             <Link
               href="/projects/allprojects"
-              className="block px-4 py-2 text-gray-100 hover:bg-slate-400"
+              className="block px-4 py-2 text-headertext hover:bg-slate-400"
               onClick={closeMenu}
             >
               All Projects
@@ -56,7 +56,7 @@ function DropdownMenu({
           <li>
             <Link
               href="/projects/frontendprojects"
-              className="block px-4 py-2 text-gray-100 hover:bg-slate-400"
+              className="block px-4 py-2 text-headertext hover:bg-slate-400"
               onClick={closeMenu}
             >
               Frontend Projects
@@ -65,7 +65,7 @@ function DropdownMenu({
           <li>
             <Link
               href="/projects/backendprojects"
-              className="block px-4 py-2 text-gray-100 hover:bg-slate-400"
+              className="block px-4 py-2 text-headertext hover:bg-slate-400"
               onClick={closeMenu}
             >
               Backend Projects
@@ -74,7 +74,7 @@ function DropdownMenu({
           <li>
             <Link
               href="/projects/mernprojects"
-              className="block px-4 py-2 text-gray-100 hover:bg-slate-400"
+              className="block px-4 py-2 text-headertext hover:bg-slate-400"
               onClick={closeMenu}
             >
               MERN Projects
@@ -83,7 +83,7 @@ function DropdownMenu({
           <li>
             <Link
               href="/projects/nextjsprojects"
-              className="block px-4 py-2 text-gray-100 hover:bg-slate-400"
+              className="block px-4 py-2 text-headertext hover:bg-slate-400"
               onClick={closeMenu}
             >
               Nextjs Projects

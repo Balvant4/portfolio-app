@@ -68,12 +68,15 @@ export default function SignInForm() {
     <div className="flex justify-center items-center h-[41.6rem] bg-gray-900">
       <div className="w-full max-w-md p-8 space-y-6 bg-gray-800 rounded-lg shadow-lg">
         <div className="text-center">
-          <h1 className="text-2xl font-bold tracking-tight text-white">
+          <h1 className="text-2xl font-bold tracking-tight text-h1text">
             Login to Your Account
           </h1>
-          <p className="mt-2 text-sm text-gray-400">
+          <p className="mt-2 text-sm text-ptext">
             Don&apos;t have an account?{" "}
-            <Link href="/sign-up" className="text-blue-400 hover:text-blue-600">
+            <Link
+              href="/sign-up"
+              className="text-linktext hover:text-linkhovertext"
+            >
               Sign up
             </Link>
           </p>
@@ -118,7 +121,7 @@ export default function SignInForm() {
               )}
             />
             <Button
-              className="bg-textcolor hover:bg-btnhover text-black font-bold w-full text-[1rem] uppercase"
+              className="bg-btnback text-btntext hover:bg-btnhover hover:text-btntexthover  font-bold w-full text-[1rem] uppercase"
               type="submit"
               disabled={isSubmitting}
             >
@@ -133,13 +136,13 @@ export default function SignInForm() {
             </Button>
           </form>
         </Form>
-        <div className="text-center mt-4 text-sm text-gray-400">
+        <div className="text-center mt-4 text-sm text-ptext">
           Forgot your password?{" "}
           <Link
             href="/forgot-password"
-            className="text-blue-400 hover:text-blue-600"
+            className="text-linktext hover:text-linkhovertext"
           >
-            Reset it here
+            Reset Password
           </Link>
         </div>
       </div>

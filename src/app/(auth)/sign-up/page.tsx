@@ -91,15 +91,18 @@ function SignUp() {
   };
 
   return (
-    <div className="flex justify-center items-center h-[41.6rem] bg-gray-900 text-white">
+    <div className="flex justify-center items-center h-[41.6rem] bg-gray-900 text-h1text">
       <div className="w-full max-w-md p-8 space-y-6 bg-gray-800 rounded-lg shadow-lg">
         <div className="text-center">
           <h1 className="text-3xl font-extrabold tracking-tight mb-4">
             Create Your Account
           </h1>
-          <p className="text-gray-400">
+          <p className="text-ptext">
             Already have an account{" "}
-            <Link href="/sign-in" className="text-blue-600 hover:text-blue-800">
+            <Link
+              href="/sign-in"
+              className="text-linktext hover:text-linkhovertext"
+            >
               Sign in
             </Link>
           </p>
@@ -177,7 +180,7 @@ function SignUp() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="bg-textcolor hover:bg-btnhover text-black font-bold w-full text-[1rem] uppercase"
+              className="bg-btnback hover:bg-btnhover text-btntext hover:text-btntexthover font-bold w-full text-[1rem] uppercase"
             >
               {isSubmitting ? (
                 <>

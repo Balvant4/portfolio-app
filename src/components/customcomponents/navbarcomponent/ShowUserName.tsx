@@ -13,7 +13,7 @@ function UserSection({ session, closeMenu }: any) {
             Hi, {session?.user?.username || session?.user?.email}
           </span>
           <Button
-            className=" bg-textcolor hover:bg-btnhover text-black text-[1rem] font-bold"
+            className=" bg-btnback hover:bg-btnhover hover:text-btntexthover text-btntext text-[1rem] font-bold"
             onClick={() => {
               signOut();
               closeMenu();
@@ -24,7 +24,7 @@ function UserSection({ session, closeMenu }: any) {
         </>
       ) : (
         <Link href="/sign-in">
-          <Button className="bg-textcolor hover:bg-btnhover text-black font-bold">
+          <Button className="bg-btnback hover:bg-btnhover hover:text-btntexthover text-btntext  font-bold">
             Login
           </Button>
         </Link>
