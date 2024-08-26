@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <AuthProvider>
-        <body className={inter.className}>
+        <body className={`${inter.className} bg-bodyback `}>
           <Navbar />
           <div className="mt-[4.5rem]">{children}</div>
           <Toaster />
