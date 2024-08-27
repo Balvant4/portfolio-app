@@ -4,61 +4,31 @@ export interface Project extends Document {
   title: string;
   description: string;
   image: string;
-  fullDetails: string;
-  technologies: {
-    frontend: string[];
-    backend: string[];
-    database: string[];
-    devOps?: string[];
-    testing?: string[];
-  };
-  features: string[];
-  futureEnhancements?: string[];
+  categories: string;
 }
 
 //
-const ProjectSchema: Schema = new Schema({
+const ProjectSchema: Schema<Project> = new Schema({
   title: {
     type: String,
-    required: true,
+    required: [true, "Title is required"],
   },
   description: {
     type: String,
-    required: true,
+    required: [true, "Description is required"],
   },
   image: {
     type: String,
-    required: true,
+    required: [true, "Image is required"],
   },
-  fullDetails: {
+  categories: {
     type: String,
-    required: true,
-  },
-  technologies: {
-    frontend: {
-      type: [String],
-      required: true,
-    },
-    backend: {
-      type: [String],
-      required: true,
-    },
-    database: {
-      type: [String],
-      required: true,
-    },
-    devOps: {
-      type: [String],
-    },
-    testing: {
-      type: [String],
-    },
-  },
-  features: {
-    type: [String],
-    required: true,
-  },
-  futureEnhancements: {
-    type: [String],
+    required: [true, "Categories is required"],
   },
 });
+
+const ProjectModel =
+  (mongoose.models.Project as mongoose.Model<Project>) ||
+  mongoose.model<Project>("Project", ProjectSchema);
+
+export default ProjectModel;
