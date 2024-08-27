@@ -18,10 +18,10 @@ export default function LanguageCycler() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentLanguage((prev) => (prev + 1) % languages.length);
-    }, 2000); // Change every 2 seconds
+    }, 2000);
 
-    return () => clearInterval(interval); // Cleanup the interval on component unmount
-  }, []);
+    return () => clearInterval(interval);
+  }, [languages.length]); // Include languages.length as a dependency
 
   return (
     <span className="text-red-600 font-bold">{languages[currentLanguage]}</span>

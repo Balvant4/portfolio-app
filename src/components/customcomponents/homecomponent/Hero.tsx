@@ -1,6 +1,5 @@
 "use client";
 import { Button } from "@/components/ui/button";
-
 import balvant from "../../../../public/balvant.jpg";
 import LanguageCycler from "@/components/customcomponents/LanguageCycle";
 import { FloatingDockDemo } from "../FloatingDocs";
@@ -19,11 +18,11 @@ function Hero() {
         {/* Overlay */}
         <div className="relative z-10 w-full md:w-1/2 text-center md:text-left">
           <h1 className="text-4xl font-bold mb-4 text-h1text">
-            I'm Balvant Kumar
+            I&apos;m Balvant Kumar
           </h1>
           <p className="text-lg mb-6 text-h3text">
             I am a passionate{" "}
-            <span className="  text-[#e8741c] font-bold">
+            <span className="text-[#e8741c] font-bold">
               {" "}
               Full Stack developer
             </span>
@@ -33,16 +32,16 @@ function Hero() {
             experiences.
           </p>
 
-          <div className=" justify-center md:justify-start space-x-4 flex  md:hidden">
+          <div className="justify-center md:justify-start space-x-4 flex md:hidden">
             <Button variant="secondary">Project</Button>
             <Button variant="secondary">Contact</Button>
           </div>
-          <div className=" mt-5">
-            <p className=" text-h1text text-2xl">
+          <div className="mt-5">
+            <p className="text-h1text text-2xl">
               Language: <LanguageCycler />
             </p>
           </div>
-          <div className=" hidden md:flex pt-5">
+          <div className="hidden md:flex pt-5">
             <FloatingDockDemo />
           </div>
         </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 function ProjectCard() {
@@ -5,7 +6,14 @@ function ProjectCard() {
     <div>
       <div className="max-w-sm bg-secbodyback border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <a href="#">
-          <img className="rounded-t-lg" src="/project.jpg" alt="" />
+          <Image
+            className="rounded-t-lg"
+            src="/project.jpg"
+            alt="Project Image"
+            width={300} // Specify the width of the image
+            height={300} // Specify the height of the image
+            layout="responsive" // Makes the image responsive
+          />
         </a>
         <div className="p-5">
           <a href="#">
