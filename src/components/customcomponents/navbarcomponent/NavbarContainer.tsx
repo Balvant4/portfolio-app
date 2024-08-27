@@ -5,14 +5,13 @@ import { usePathname } from "next/navigation";
 import UserSection from "./ShowUserName";
 import MobileMenuButton from "./MobileMenuBtn";
 import NavItem from "./NavItem";
-import DropdownMenu from "./DropDown";
 import Image from "next/image";
 import logo from "../../../../public/logo.png";
 
 function NavbarContainer() {
   const { data: session } = useSession();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   const pathname = usePathname();
 
   const toggleMenu = () => {
@@ -21,11 +20,6 @@ function NavbarContainer() {
 
   const closeMenu = () => {
     setMenuOpen(false);
-    setDropdownOpen(false);
-  };
-
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
   };
 
   const isActive = (path: string) => pathname === path;
@@ -66,11 +60,11 @@ function NavbarContainer() {
               isActive={isActive("/about")}
               closeMenu={closeMenu}
             />
-            <DropdownMenu
-              dropdownOpen={dropdownOpen}
-              toggleDropdown={toggleDropdown}
-              closeMenu={closeMenu}
+            <NavItem
+              href="/projects"
+              label="Projects"
               isActive={isActive("/projects")}
+              closeMenu={closeMenu}
             />
             <NavItem
               href="/blog"
