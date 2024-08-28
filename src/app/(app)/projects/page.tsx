@@ -1,13 +1,13 @@
 "use client";
-import ProjectCard from "@/components/customcomponents/ProjectCard";
-import { VortexDemoSecond } from "@/components/customcomponents/VartoxDemoProject";
+import ProjectCard from "@/components/customcomponents/project/ProjectCard";
+import { VortexDemoSecond } from "@/components/customcomponents/project/VartoxDemoProject";
 import React from "react";
 
 function page() {
   return (
-    <div>
+    <div className=" pb-10">
       <VortexDemoSecond />
-      <div className=" px-4">
+      <div className=" md:px-16 px-4">
         <ProjectCard />
       </div>
     </div>

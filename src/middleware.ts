@@ -28,11 +28,5 @@ export async function middleware(request: NextRequest) {
 
 // Matcher configuration
 export const config = {
-  matcher: [
-    "/sign-in",
-    "/sign-up",
-    "/",
-    "/verify/:path*",
-    "/projects/:path*", // Protect all routes under the /projects path
-  ],
+  matcher: ["/sign-in", "/sign-up", "/", "/verify/:path*", "/projects"],
 };
